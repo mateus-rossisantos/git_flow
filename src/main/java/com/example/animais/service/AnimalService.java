@@ -3,6 +3,7 @@ package com.example.animais.service;
 import com.example.animais.dto.AnimalDTO;
 import com.example.animais.model.Animal;
 import com.example.animais.repository.AnimalRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
+@Slf4j
 public class AnimalService {
 
     @Autowired
@@ -39,6 +41,7 @@ public class AnimalService {
     public ResponseEntity<Animal> replaceAnimal(AnimalDTO animalDto, String id) {
         Optional<Animal> animalOptional = animalRepository.findById(id);
         if (animalOptional.isPresent()){
+            log.info("Animal encontrado.");
             Animal animal = modelMapper.map(animalDto, Animal.class);
             animal.setId(id);
             animalRepository.save(animal);
