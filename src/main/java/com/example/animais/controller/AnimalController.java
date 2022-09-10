@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/animais")
+@RequestMapping("/animals")
 public class AnimalController implements AnimalsApi {
 
     private final AnimalService animalService;

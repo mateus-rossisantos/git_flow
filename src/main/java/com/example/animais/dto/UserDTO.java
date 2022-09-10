@@ -13,5 +13,5 @@ import java.util.List;
 public class UserDTO {
     private String nome;
     private String password;
-    private List<Profile> perfis;
+    private List<Profile> profiles;
 }
