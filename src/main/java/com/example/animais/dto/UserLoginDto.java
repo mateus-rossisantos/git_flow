@@ -9,10 +9,10 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserLoginDto {
-    private String nome;
+    private String name;
     private String password;
 
     public UsernamePasswordAuthenticationToken converter() {
-        return new UsernamePasswordAuthenticationToken(nome, password);
+        return new UsernamePasswordAuthenticationToken(name, password);
     }
 }
