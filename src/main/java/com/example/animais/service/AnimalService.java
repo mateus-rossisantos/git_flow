@@ -44,6 +44,7 @@ public class AnimalService {
             log.info("Animal encontrado.");
             Animal animal = modelMapper.map(animalDto, Animal.class);
             animal.setId(id);
+            
             animalRepository.save(animal);
             return ResponseEntity.ok(animal);
         }
