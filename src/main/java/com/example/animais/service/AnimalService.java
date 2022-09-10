@@ -41,6 +41,7 @@ public class AnimalService {
         if (animalOptional.isPresent()){
             Animal animal = modelMapper.map(animalDto, Animal.class);
             animal.setId(id);
+            
             animalRepository.save(animal);
             return ResponseEntity.ok(animal);
         }
